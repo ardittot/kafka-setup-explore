@@ -41,7 +41,7 @@ kafka-avro-console-consumer --topic test \
 kafka-topics --zookeeper localhost:2181 --create --topic test1 --partitions 1 --replication-factor 1
 ## b. Define schema
 curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-    --data {"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"}]}"} \
+    --data '{"schema": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"name\", \"type\": \"string\"}]}"}' \
      http://localhost:8081/subjects/test1-value/versions
 curl -X GET http://localhost:8081/subjects/test1-value/versions
 ## c. Send data via REST
@@ -57,11 +57,11 @@ confluent stop
 # $CONFLUENT_HOME/bin/kafka-rest-start $CONFLUENT_HOME//etc/kafka-rest/kafka-rest.properties
 
 ## a. Create topic
-kafka-topics --zookeeper localhost:2181 --create --topic test1 --partitions 1 --replication-factor 1
+kafka-topics --zookeeper localhost:2181 --create --topic test2 --partitions 1 --replication-factor 1
 ## b. Send data via REST
-curl -X POST -H "Content-Type: application/vnd.kafka.json.v2+json" -H "Accept: application/vnd.kafka.v2+json" --data '{"records":[{"value":{"foo":"bar"}}]}' "http://localhost:8082/topics/test1"
+curl -X POST -H "Content-Type: application/vnd.kafka.json.v2+json" -H "Accept: application/vnd.kafka.v2+json" --data '{"records":[{"value":{"foo":"bar"}}]}' "http://localhost:8082/topics/test2"
 ## c. Consume to console
-kafka-console-consumer --topic test1 \
+kafka-console-consumer --topic test2 \
          --zookeeper localhost:2181 \
          --from-beginning
 
