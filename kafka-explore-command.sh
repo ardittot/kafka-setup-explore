@@ -71,6 +71,7 @@ confluent stop
 # $CONFLUENT_HOME/bin/kafka-rest-stop
 
 # TRY Kafka consumer
-kafka-consumer-groups –-new-consumer --describe –-group test1-consumer –-bootstrap-server localhost:9092
-
+curl -X POST -H "Content-Type: application/vnd.kafka.v2+json" -H "Accept: application/vnd.kafka.v2+json" \
+    --data '{"name": "test2-instance", "format": "json", "auto.offset.reset": "earliest"}' \
+    http://localhost:8082/consumers/test2-group
 
