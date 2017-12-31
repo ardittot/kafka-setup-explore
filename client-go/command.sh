@@ -30,8 +30,3 @@ cd ~
 # Install kafka go client
 sudo /opt/go/bin/go get -u github.com/confluentinc/confluent-kafka-go/kafka
 
-# Pull from git
-mkdir kafka-client-go && cd kafka-client-go
-git init
-git remote add origin https://github.com/ardittot/kafka-go-client-explore.git
-git pull origin master
