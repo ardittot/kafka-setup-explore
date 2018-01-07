@@ -18,15 +18,18 @@ sudo ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /opt/jdk
 source /etc/profile.d/custom.sh
 ```
 
-## Install kafka (Source) (https://docs.confluent.io/current/installation/installing_cp.html)
+## Install kafka
+Source: https://docs.confluent.io/current/installation/installing_cp.html
 ```
 wget http://packages.confluent.io/archive/4.0/confluent-oss-4.0.0-2.11.tar.gz
 tar xvzf confluent-oss-4.0.0-2.11.tar.gz
 sudo mv confluent-4.0.0 /opt/
 sudo ln -s /opt/confluent-4.0.0 /opt/confluent
-# Insert this lines to '/etc/profile.d/custom.sh'
+```
+Insert this lines to '/etc/profile.d/custom.sh'
 > export CONFLUENT_HOME="/opt/confluent"
 > export PATH=$CONFLUENT_HOME/bin:$PATH
+```
 source /etc/profile.d/custom.sh
 ```
 
