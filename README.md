@@ -55,9 +55,9 @@ kafka-avro-console-producer \
 
 Insert this following messages in the console
 > {"f1": "value1"}
-
+>
 > {"f1": "value2"}
-
+>
 > {"f1": "value3"}
 
 Start a console consumer in separated terminal
