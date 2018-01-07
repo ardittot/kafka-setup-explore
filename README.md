@@ -16,6 +16,7 @@ sudo ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /opt/jdk
 ```
 Insert this lines to _/etc/profile.d/custom.sh_
 > export JAVA_HOME="/opt/jdk"
+>
 > export PATH=$JAVA_HOME/bin:$PATH
 ```
 source /etc/profile.d/custom.sh
@@ -31,6 +32,7 @@ sudo ln -s /opt/confluent-4.0.0 /opt/confluent
 ```
 Insert this lines to _/etc/profile.d/custom.sh_
 > export CONFLUENT_HOME="/opt/confluent"
+>
 > export PATH=$CONFLUENT_HOME/bin:$PATH
 ```
 source /etc/profile.d/custom.sh
@@ -52,9 +54,11 @@ kafka-avro-console-producer \
 ```
 
 Insert this following messages in the console
->>> {"f1": "value1"}
->>> {"f1": "value2"}
->>> {"f1": "value3"}
+> {"f1": "value1"}
+
+> {"f1": "value2"}
+
+> {"f1": "value3"}
 
 Start a console consumer in separated terminal
 ```
