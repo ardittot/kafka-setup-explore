@@ -3,10 +3,15 @@
 This example is using Ubuntu 16.04 (LTS)
 
 ## Preparation
-#### Update Ubuntu
+Update Ubuntu
 ```
 sudo apt-get update
 sudo apt-get upgrade
+```
+
+Create a new shell bootstrap script /etc/profile.d/custom.sh
+```
+sudo touch /etc/profile.d/custom.sh
 ```
 
 #### Install Java
