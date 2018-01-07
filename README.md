@@ -3,25 +3,25 @@
 This example is using Ubuntu 16.04 (LTS)
 
 ## Preparation
-### Update Ubuntu
+#### Update Ubuntu
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-### Install Java
+#### Install Java
 ```
 sudo apt-get install openjdk-8-jdk openjdk-8-source
 sudo ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /opt/jdk
 ```
 Insert this lines to _/etc/profile.d/custom.sh_
 > export JAVA_HOME="/opt/jdk"
-> export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
 ```
 source /etc/profile.d/custom.sh
 ```
 
-### Install kafka
+#### Install kafka
 Source: https://docs.confluent.io/current/installation/installing_cp.html
 ```
 wget http://packages.confluent.io/archive/4.0/confluent-oss-4.0.0-2.11.tar.gz
@@ -31,7 +31,7 @@ sudo ln -s /opt/confluent-4.0.0 /opt/confluent
 ```
 Insert this lines to _/etc/profile.d/custom.sh_
 > export CONFLUENT_HOME="/opt/confluent"
-> export PATH=$CONFLUENT_HOME/bin:$PATH
+export PATH=$CONFLUENT_HOME/bin:$PATH
 ```
 source /etc/profile.d/custom.sh
 ```
@@ -43,7 +43,7 @@ confluent start
 confluent status
 ```
 
-### 1) Producer and consumer via console
+#### 1) Producer and consumer via console
 Initiate a producer
 ```
 kafka-avro-console-producer \
@@ -63,7 +63,7 @@ kafka-avro-console-consumer --topic test \
          --from-beginning
 ```
 
-### 2) Producer via REST with Avro schema; Consumer in the console
+#### 2) Producer via REST with Avro schema; Consumer in the console
 Create kafka topic
 ```
 kafka-topics --zookeeper localhost:2181 --create --topic test1 --partitions 1 --replication-factor 1
@@ -87,7 +87,7 @@ Consume to console in separated terminal
 kafka-avro-console-consumer --topic test1 --zookeeper localhost:2181 --from-beginning
 ```
 
-### 3) Producer via REST without Avro schema; Consume in the console
+#### 3) Producer via REST without Avro schema; Consume in the console
 Create topic
 ```
 kafka-topics --zookeeper localhost:2181 --create --topic test2 --partitions 1 --replication-factor 1
@@ -105,7 +105,7 @@ kafka-console-consumer --topic test2 \
          --from-beginning
 ```
 
-### Miscellaneous
+#### Miscellaneous
 Try kafka consumer group
 ```
 curl -X POST -H "Content-Type: application/vnd.kafka.v2+json" -H "Accept: application/vnd.kafka.v2+json" \
