@@ -13,7 +13,7 @@ sudo apt-get upgrade
 sudo apt-get install openjdk-8-jdk openjdk-8-source
 sudo ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /opt/jdk
 ```
-Insert this lines to '/etc/profile.d/custom.sh'
+Insert this lines to _/etc/profile.d/custom.sh_
 > export JAVA_HOME="/opt/jdk"
 > export PATH=$JAVA_HOME/bin:$PATH
 ```
@@ -28,7 +28,7 @@ tar xvzf confluent-oss-4.0.0-2.11.tar.gz
 sudo mv confluent-4.0.0 /opt/
 sudo ln -s /opt/confluent-4.0.0 /opt/confluent
 ```
-Insert this lines to '/etc/profile.d/custom.sh'
+Insert this lines to _/etc/profile.d/custom.sh_
 > export CONFLUENT_HOME="/opt/confluent"
 > export PATH=$CONFLUENT_HOME/bin:$PATH
 ```
