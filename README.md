@@ -16,7 +16,6 @@ sudo ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /opt/jdk
 ```
 Insert this lines to _/etc/profile.d/custom.sh_
 > export JAVA_HOME="/opt/jdk"
-> 
 > export PATH=$JAVA_HOME/bin:$PATH
 ```
 source /etc/profile.d/custom.sh
