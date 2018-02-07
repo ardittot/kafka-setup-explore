@@ -67,9 +67,10 @@ Insert this following messages in the console
 
 Start a console consumer in separated terminal
 ```
-kafka-avro-console-consumer --topic test \
+kafka-avro-console-consumer \
          --zookeeper localhost:2181 \
-         --from-beginning
+         --from-beginning \
+         --topic test
 ```
 
 #### 2) Producer via REST with Avro schema; Consumer in the console
@@ -93,7 +94,10 @@ curl -X POST -H "Content-Type: application/vnd.kafka.avro.v2+json" -H "Accept: a
 
 Consume to console in separated terminal
 ```
-kafka-avro-console-consumer --topic test1 --zookeeper localhost:2181 --from-beginning
+kafka-avro-console-consumer \
+         --zookeeper localhost:2181 \
+         --from-beginning \
+         --topic test1
 ```
 
 #### 3) Producer via REST without Avro schema; Consume in the console
@@ -109,9 +113,10 @@ curl -X POST -H "Content-Type: application/vnd.kafka.json.v2+json" -H "Accept: a
 
 Consume to console
 ```
-kafka-console-consumer --topic test2 \
+kafka-console-consumer \
          --zookeeper localhost:2181 \
-         --from-beginning
+         --from-beginning \
+         --topic test2
 ```
 
 #### Miscellaneous
