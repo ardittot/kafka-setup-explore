@@ -76,7 +76,12 @@ kafka-avro-console-consumer \
 #### 2) Producer via REST with Avro schema; Consumer in the console
 Create kafka topic
 ```
-kafka-topics --zookeeper localhost:2181 --create --topic test1 --partitions 1 --replication-factor 1
+kafka-topics \
+         --zookeeper localhost:2181 \
+         --create \
+         --partitions 1 \
+         --replication-factor 1 \
+         --topic test1
 ```
 
 Define schema
@@ -103,7 +108,12 @@ kafka-avro-console-consumer \
 #### 3) Producer via REST without Avro schema; Consume in the console
 Create topic
 ```
-kafka-topics --zookeeper localhost:2181 --create --topic test2 --partitions 1 --replication-factor 1
+kafka-topics \
+         --zookeeper localhost:2181 \
+         --create \
+         --partitions 1 \
+         --replication-factor 1 \
+         --topic test2
 ```
 
 Send data via REST
