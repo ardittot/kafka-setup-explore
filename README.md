@@ -82,6 +82,8 @@ kafka-topics \
          --partitions 1 \
          --replication-factor 1 \
          --topic test1
+         
+curl -X GET 0.0.0.0:8082/topics
 ```
 
 Define schema
@@ -114,6 +116,8 @@ kafka-topics \
          --partitions 1 \
          --replication-factor 1 \
          --topic test2
+         
+curl -X GET 0.0.0.0:8082/topics
 ```
 
 Send data via REST
